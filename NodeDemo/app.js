@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var itemsRouter = require('./routes/items');
-var productsRouter = require('./routes/product');
+var authenRouter = require('./routes/authen');
 
 var app = express();
 
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/items',itemsRouter);
-app.use('/products',productsRouter);
+app.use('/authen',authenRouter);
 
 mongoose.connect("mongodb+srv://chinachess:chinachess123@cluster0.43x9eud.mongodb.net/chinachess");
 mongoose.connection.once('open', function(){
